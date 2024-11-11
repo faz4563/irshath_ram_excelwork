@@ -1,0 +1,272 @@
+
+ 
+.homeContent {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.homeNavbar {
+  position: absolute;
+  display: flex;
+}
+
+
+.homePart1 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding: 30px 0px;
+  box-sizing: border-box;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  margin: 0px 0px 0px 0px;
+  padding: 150px 2 0px 40px 20px;
+  box-sizing: border-box;
+}
+
+.homeRight {
+  display: flex;
+  width: 500px;
+  align-items: space-between;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homePart1>div {
+  margin-top: 5%;
+}
+
+.homePart1>div>div {
+
+  width: 450px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 50px;
+
+}
+
+.homePart1>div>h1 {
+  color: #fc9f13;
+  box-sizing: border-box;
+  font-size: 72px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.homePart1>div>h1,
+p,
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+
+}
+
+.homePart1>div>p {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: lighter;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.homeLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  /* border: 5px solid black; */
+  margin-left: 20%;
+  margin-top: 40px;
+}
+
+.homeLeft>img {
+
+
+  height: 80vh;
+}
+
+.homePart2 {
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  padding: 30px 0px;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding-bottom: 100px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.homePart3 {
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  padding: 30px 0px;
+  align-items: start;
+  justify-content: center;
+  gap: 30px;
+  padding-bottom: 100px;
+  flex-wrap: wrap;
+}
+
+.homePart2>div>h5 {
+  color: #fc9f13;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.homePart3>div>h5 {
+  color: #fc9f13;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+
+.homePart2>div {
+  flex-wrap: wrap;
+  display: flex; 
+  flex-direction: column;
+  gap: 30px;
+}
+
+.homePart3>div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.homePart2>div>ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  gap: 20px;
+}
+
+.homePart3>div>ul {
+  display: flex;
+  font-size: 18px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.homePart4 {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  gap: 20px;
+
+}
+
+.homePart4>div {
+  width: 600px;
+  padding: 0px 20px;
+}
+
+.homePart4>div>h1 {
+  color: #fc9f13;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.homePart4>div>p {
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+
+}
+
+.homePart4>div {
+  width: 500px;
+  height: 500px;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+
+  .homeContent {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .homePart1 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 200vh;
+  }
+
+  .homeNavbar {
+    position: absolute;
+    background-color: #fc9f13;
+    display: flex;
+  }
+
+  .homeLeft {
+    margin-left: 0%;
+  }
+
+  .homeLeft>img {
+    height: 800px;
+    margin-top: -150px;
+    margin-left: 0%;
+  }
+
+  .homeRight {
+    width: 500px;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .homePart1>div>div {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 50px;
+  }
+
+  .homePart1>div>h1 {
+    color: #fc9f13;
+    font-size: 52px;
+    margin: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .homePart1>div>div>h1,
+  p,
+  h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+  }
+
+  .homePart1>div>div>p {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: lighter;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+
+
+  .homePart4 {
+    flex-wrap: wrap;
+  }
+}
