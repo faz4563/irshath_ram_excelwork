@@ -1,6 +1,17 @@
-.footerBaseContainer{
+.footerBaseContainer {
     width: 100vw;
-    height: 400px;
+    height: 150px;
     background-color: white;
     justify-content: center;
+    align-content: center;
+}
+
+.footerBaseContainer>div {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footerBaseContainer>div>div {
+    height: 40px;
 }

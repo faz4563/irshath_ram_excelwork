@@ -26,14 +26,15 @@
 }
 
 @media (max-width: 768px) {
-    .navBarBaseContainer{
+    .navBarBaseContainer {
         align-content: center;
         justify-content: center;
         width: 100vw;
         margin: 0px;
         align-content: center;
         justify-content: center;
-    } 
+    }
+
     .actions {
         display: none;
     }
