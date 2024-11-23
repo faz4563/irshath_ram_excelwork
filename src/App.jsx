@@ -12,7 +12,7 @@ import img10 from './assets/images/img8.png';
 import Footer from "./components/Footer/Footer"
 
 function App() {
-  
+  localStorage.setItem("menuValue", "0")
   return (
     <div className="homeContent">
       <div className="homeNavbar">
@@ -142,8 +142,8 @@ function App() {
           </p>
         </div>
         <img src={img7} style={{ width: "400px", height: "400px" }} alt="img7" />
-      </div> 
-      <Footer /> 
+      </div>
+      <Footer />
     </div>
   )
 }
