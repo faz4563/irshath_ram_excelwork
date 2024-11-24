@@ -12,7 +12,7 @@ import img10 from './assets/images/img8.png';
 import Footer from "./components/Footer/Footer"
 
 function App() {
-  localStorage.setItem("menuValue", "0")
+  sessionStorage.setItem("menuValue", "0")
   return (
     <div className="homeContent">
       <div className="homeNavbar">
