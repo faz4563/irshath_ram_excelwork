@@ -35,7 +35,7 @@ export const {
   handleMenuHome: handleHome,
   handleMenuProducts: handleProduct,
   handleMenuAboutUs: handleMenuAboutUs,
-  handleMenuMore: handleMenuMore,
+  handleMenuFeatures: handleMenuFeatures,
 } = handleMenuSlice.actions;
 
 export default handleMenuSlice.reducer;

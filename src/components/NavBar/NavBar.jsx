@@ -2,7 +2,7 @@ import React from 'react'
 import './NavBar.css'
 import logo from '../../assets/images/logo.png'
 import { useDispatch, useSelector } from "react-redux";
-import { handleHome, handleProduct, handleMenuAboutUs, handleMenuMore } from "../../redux/handleMenu/handleMenuSlice";
+import { handleHome, handleProduct, handleMenuAboutUs, handleMenuFeatures} from "../../redux/handleMenu/handleMenuSlice";
 import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
@@ -38,7 +38,7 @@ const NavBar = () => {
                 <p
                     style={{ backgroundColor: menuValue === "3" ? " rgb(199, 255, 171)" : null, borderRadius: '5px' }}
                     onClick={() => {
-                        dispatch(handleMenuMore('3'));
+                        dispatch(handleMenuFeatures('3'));
                         navigate("/feature")
                     }}>Features</p>
 
