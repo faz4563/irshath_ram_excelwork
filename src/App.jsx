@@ -10,17 +10,72 @@ import img7 from './assets/images/img5.jpg';
 import img9 from './assets/images/img7.png';
 import img10 from './assets/images/img8.png';
 import Footer from "./components/Footer/Footer"
-
+import {   useDispatch, useSelector } from "react-redux";
+import { handleHome, handleProduct, handleMenuAboutUs, handleMenuFeatures, toggleDropdown } from "./redux/handleMenu/handleMenuSlice";
+import { useNavigate } from "react-router-dom"
 function App() {
-  sessionStorage.setItem("menuValue", "0")
+  sessionStorage.
+  setItem("menuValue", "0")
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const menuValue = useSelector((state) => state.handleMenu.menuValue);
+  const dropdownVisible = useSelector((state) => state.handleMenu.dropdownVisible);
   return (
     <div className="homeContent">
       <div className="homeNavbar">
         <NavBar />
       </div>
+      {dropdownVisible && (
+        <div className="dropdownMenu">
+          <button style={{ display: 'flex', position: "absolute", top: "10px", right: "10px" }} onClick={() => {
+            dispatch(toggleDropdown())
+            console.log("fazil");
+
+          }
+          }>Menu</button>
+          <p
+            style={{ backgroundColor: menuValue === "0" ? " rgb(199, 255, 171)" : null, borderRadius: '5px' }}
+            onClick={() => {
+              dispatch(handleHome('0'));
+              navigate("/");
+              dispatch(toggleDropdown())
+              console.log(menuValue);
+            }}>Home</p>
+          <p
+            style={{ backgroundColor: menuValue === "1" ? " rgb(199, 255, 171)" : null, borderRadius: '5px' }}
+            onClick={() => {
+              dispatch(handleProduct('1'));
+              navigate("/products");
+              dispatch(toggleDropdown())
+            }}>Products</p>
+          <p
+
+            style={{ backgroundColor: menuValue === "2" ? " rgb(199, 255, 171)" : null, borderRadius: '5px' }}
+            onClick={() => {
+              dispatch(handleMenuAboutUs('2'));
+              navigate("/about");
+              dispatch(toggleDropdown())
+            }}>About Us</p>
+          <p
+
+            style={{ backgroundColor: menuValue === "3" ? " rgb(199, 255, 171)" : null, borderRadius: '5px' }}
+            onClick={() => {
+              dispatch(handleMenuFeatures('3'));
+              navigate("/feature");
+            }}>Features</p>
+          <p onClick={() => { }}>+91 9003139000</p>
+          <p onClick={() => {
+            // dispatch(handleMenuMore('4'));
+            navigate("/contact");
+            dispatch(toggleDropdown())
+          }}>Contact Us</p>
+
+        </div>
+      )}
       <div className="homePart1">
+        
         <div className="homeRight" >
-          <h1 style={{ textAlign: "center" }}>
+          <h1  >
             INTERPACK INDUSTRIES</h1>
           <p>
             PIONEERS OF CORRUGATED BOARDS AND BOXES - <span style={{
@@ -32,9 +87,7 @@ function App() {
             At Interpack Industries, Quality is our main goal. Regardless of what kind of Packaging you're searching for, we're focused on bringing you precisely what you need, when you need it. Our clients love working with us since we produce top notch Boxes with a particularly quick turnaround.
           </p>
         </div>
-        <div className="homeLeft" >
-          <img src={img1} alt="img1" />
-        </div>
+
       </div>
       <div className="homePart2">
         <div>
@@ -103,7 +156,7 @@ function App() {
         </div>
       </div>
       <div className="homePart4">
-        <img src={img9} style={{ width: "450px", height: "400px" }} alt="img9" />
+        <img src={img9} alt="img9" />
         <div>
           <h1>
             CUSTOMIZATION
@@ -112,7 +165,7 @@ function App() {
             We Customize Boxes based on the Clients requirement. We etch out a solution with our dedicated design Team and bring out a Product that suits the Customer.
           </p>
         </div>
-        <img src={img10} style={{ width: "450px", height: "400px" }} alt="img10" />
+        <img src={img10} alt="img10" />
         <div>
           <h1>
             IN TIME DELIVERY
@@ -123,6 +176,8 @@ function App() {
         </div>
       </div>
       <div className="homePart4">
+
+        <img src={img6} alt="img6" />
         <div>
           <h1>
             QUALITY ASSESSMENT
@@ -131,8 +186,8 @@ function App() {
             Our Quality Assurance Team makes sure that no item goes out of the Factory without Periodical Checks.
           </p>
         </div>
-        <img src={img6} style={{ width: "400px", height: "400px" }} alt="img6" />
 
+        <img src={img7} alt="img7" />
         <div >
           <h1>
             STORAGE
@@ -141,9 +196,10 @@ function App() {
             Our Warehouse with an Expanse of 50,000 Sq.ft aids in providing adequate Storage and clean maintenance of the Product to the consumer when and where ever required.
           </p>
         </div>
-        <img src={img7} style={{ width: "400px", height: "400px" }} alt="img7" />
       </div>
-      <Footer />
+      <div className="footerClass">
+        <Footer />
+      </div>
     </div>
   )
 }

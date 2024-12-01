@@ -1,58 +1,67 @@
-import React from 'react'
-import './NavBar.css'
-import logo from '../../assets/images/logo.png'
+import React from 'react';
+import './NavBar.css';
+import logo from '../../assets/images/logo.png';
 import { useDispatch, useSelector } from "react-redux";
-import { handleHome, handleProduct, handleMenuAboutUs, handleMenuFeatures} from "../../redux/handleMenu/handleMenuSlice";
+import { handleHome, handleProduct, handleMenuAboutUs, handleMenuFeatures, toggleDropdown } from "../../redux/handleMenu/handleMenuSlice";
 import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
     const dispatch = useDispatch();
-    
-    const menuValue = useSelector((state) => state.handleMenu.menuValue);
+    const menuValue = useSelector((state) => state.handleMenu.menuValue); const dropdownVisible = useSelector((state) => state.handleMenu.dropdownVisible);
+
     const navigate = useNavigate();
 
     return (
         <div className='navBarBaseContainer laptop: text-sm font-mono'>
-            <img src={logo} className=' ' />
-            <div className="actions text-nano  " >
+            <img src={logo} alt="Logo" />
+            <button className="mobileMenuButton" onClick={() => {
+                dispatch(toggleDropdown())
+            }
+            }>
+                Menu
+            </button>
+            <div className="actions text-nano">
                 <p
                     style={{ backgroundColor: menuValue === "0" ? " rgb(199, 255, 171)" : null, borderRadius: '5px' }}
                     onClick={() => {
                         dispatch(handleHome('0'));
-                        navigate("/")
+                        navigate("/");
                         console.log(menuValue);
                     }}>Home</p>
                 <p
                     style={{ backgroundColor: menuValue === "1" ? " rgb(199, 255, 171)" : null, borderRadius: '5px' }}
                     onClick={() => {
                         dispatch(handleProduct('1'));
-                        navigate("/products")
+                        navigate("/products");
                     }}>Products</p>
                 <p
                     style={{ backgroundColor: menuValue === "2" ? " rgb(199, 255, 171)" : null, borderRadius: '5px' }}
                     onClick={() => {
                         dispatch(handleMenuAboutUs('2'));
-                        navigate("/about")
+                        navigate("/about");
                     }}>About Us</p>
-
                 <p
                     style={{ backgroundColor: menuValue === "3" ? " rgb(199, 255, 171)" : null, borderRadius: '5px' }}
                     onClick={() => {
                         dispatch(handleMenuFeatures('3'));
-                        navigate("/feature")
+                        navigate("/feature");
                     }}>Features</p>
-
-
                 <p onClick={() => { }}>+91 9003139000</p>
                 <p onClick={() => {
                     dispatch(handleMenuMore('4'));
-                    navigate("/contact")
-
+                    navigate("/contact");
                 }}>Contact Us</p>
-                <button onClick={() => { }}> Get In Touch</button>
+
+                <button onClick={() => { }}>Get In Touch</button>
+
+
             </div>
+
+
         </div>
-    )
+    );
 }
 
-export default NavBar
+
+
+export default NavBar;

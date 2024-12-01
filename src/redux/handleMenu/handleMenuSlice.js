@@ -1,41 +1,42 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialData = {
-  menuValue: sessionStorage.getItem("menuValue"),
+const initialState = {
+    menuValue: null,
+    dropdownVisible: false, 
 };
 
 const handleMenuSlice = createSlice({
-  name: "handleMenu",
-  initialState: initialData,
-  reducers: {
-    handleMenuHome(state, action) {
-      state.menuValue = action.payload;
-      sessionStorage.setItem("menuValue","0")
+    name: 'handleMenu',
+    initialState,
+    reducers: {
+        handleHome: (state, action) => {
+            state.menuValue = action.payload;
+        },
+        handleProduct: (state, action) => {
+            state.menuValue = action.payload;
+        },
+        handleMenuAboutUs: (state, action) => {
+            state.menuValue = action.payload;
+        },
+        handleMenuFeatures: (state, action) => {
+            state.menuValue = action.payload;
+        },
+        handleMenuMore: (state, action) => {
+            state.menuValue = action.payload;
+        },
+        toggleDropdown: (state) => {
+            state.dropdownVisible = !state.dropdownVisible;
+        }, // Add this action
     },
-    handleMenuProducts(state, action) {
-      state.menuValue = action.payload;
-      sessionStorage.setItem("menuValue","1")
-    },
-    handleMenuAboutUs(state, action) {
-      state.menuValue = action.payload;
-      sessionStorage.setItem("menuValue","2")
-    },
-    handleMenuFeatures(state, action) {
-      state.menuValue = action.payload;
-      sessionStorage.setItem("menuValue","3")
-    },
-    handleMenuContact(state, action) {
-      state.menuValue = action.payload;
-      sessionStorage.setItem("menuValue","4")
-    },
-  },
 });
 
 export const {
-  handleMenuHome: handleHome,
-  handleMenuProducts: handleProduct,
-  handleMenuAboutUs: handleMenuAboutUs,
-  handleMenuFeatures: handleMenuFeatures,
+    handleHome,
+    handleProduct,
+    handleMenuAboutUs,
+    handleMenuFeatures,
+    handleMenuMore,
+    toggleDropdown, // Export the new action
 } = handleMenuSlice.actions;
 
 export default handleMenuSlice.reducer;
