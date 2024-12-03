@@ -22,15 +22,17 @@ const Products = () => {
 
   return (
     <div className='productBaseContainer'>
-      <div >
+      <div className='productBaseNavbar'>
         <NavBar />
       </div>
       {dropdownVisible && (
         <div className="dropdownMenu">
           <img
             src={closeIcon}
-            style={{width:"20px",height:"20px", top:"-200px",display:'flex',position:"relative",
-              right:"-150px"}}
+            style={{
+              width: "20px", height: "20px", top: "-200px", display: 'flex', position: "relative",
+              right: "-150px"
+            }}
             onClick={() => {
               dispatch(toggleDropdown())
             }

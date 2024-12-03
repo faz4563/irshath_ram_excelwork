@@ -11,7 +11,6 @@ const Feature = () => {
         <NavBar />
       </div>
       <div  className='featuresGridBox'>
-        
           <div>
             <img src={lockSvg} alt="lockSvg.svg" width="100" height="100" color='#fc9f13' />
             <h1>

@@ -53,13 +53,13 @@ const NavBar = () => {
                         dispatch(handleMenuFeatures('3'));
                         navigate("/feature");
                     }}>Features</p>
-                <p onClick={() => { }}>+91 9003139000</p>
-                <p onClick={() => {
-                    dispatch(handleMenuMore('4'));
-                    navigate("/contact");
-                }}>Contact Us</p>
+                 
+                
 
-                <button onClick={() => { }}>Get In Touch</button>
+                <button onClick={() => {
+                    //  dispatch(handleMenuMore('4'));
+                     navigate("/contact");
+                 }}>Contact Us</button>
 
 
             </div>
