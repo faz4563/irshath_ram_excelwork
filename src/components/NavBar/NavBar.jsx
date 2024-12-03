@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { handleHome, handleProduct, handleMenuAboutUs, handleMenuFeatures, toggleDropdown } from "../../redux/handleMenu/handleMenuSlice";
 import { useNavigate } from 'react-router-dom';
 
+import menuIcon from '../../assets/icons/menu.png';
 const NavBar = () => {
     const dispatch = useDispatch();
     const menuValue = useSelector((state) => state.handleMenu.menuValue); const dropdownVisible = useSelector((state) => state.handleMenu.dropdownVisible);
@@ -14,12 +15,18 @@ const NavBar = () => {
     return (
         <div className='navBarBaseContainer laptop: text-sm font-mono'>
             <img src={logo} alt="Logo" />
-            <button className="mobileMenuButton" onClick={() => {
-                dispatch(toggleDropdown())
-            }
-            }>
-                Menu
-            </button>
+            
+
+            <div className="mobileMenuButton">
+            <img 
+                src={menuIcon}
+                onClick={() => {
+                    dispatch(toggleDropdown())
+                }
+                }>
+
+            </img>
+            </div>
             <div className="actions text-nano">
                 <p
                     style={{ backgroundColor: menuValue === "0" ? " rgb(199, 255, 171)" : null, borderRadius: '5px' }}

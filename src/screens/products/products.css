@@ -5,7 +5,16 @@
     box-sizing: border-box;
     overflow-x:hidden ;
 }
-
+.productBaseContainer:nth-child(1){
+    position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0px;
+  /* justify-content: center; */
+  /* background-color: #fc9f13; */
+  /* padding: 20px 0px; */
+  /* margin: 50px; */
+}
 .productBaseContainer>div>img {
     margin-top: 5%;
     height: 800px;

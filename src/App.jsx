@@ -10,6 +10,8 @@ import img7 from './assets/images/img5.jpg';
 import img9 from './assets/images/img7.png';
 import img10 from './assets/images/img8.png';
 import Footer from "./components/Footer/Footer"
+
+import closeIcon from './assets/icons/close.png';
 import {   useDispatch, useSelector } from "react-redux";
 import { handleHome, handleProduct, handleMenuAboutUs, handleMenuFeatures, toggleDropdown } from "./redux/handleMenu/handleMenuSlice";
 import { useNavigate } from "react-router-dom"
@@ -21,18 +23,18 @@ function App() {
   const menuValue = useSelector((state) => state.handleMenu.menuValue);
   const dropdownVisible = useSelector((state) => state.handleMenu.dropdownVisible);
   return (
-    <div className="homeContent">
-      <div className="homeNavbar">
-        <NavBar />
-      </div>
-      {dropdownVisible && (
-        <div className="dropdownMenu">
-          <button style={{ display: 'flex', position: "absolute", top: "10px", right: "10px" }} onClick={() => {
-            dispatch(toggleDropdown())
-            console.log("fazil");
-
-          }
-          }>Menu</button>
+    <div className="homeContent"> 
+        <NavBar  />
+        {dropdownVisible && (
+        <div className="dropdownMenu" >
+          <img 
+                src={closeIcon}
+                style={{width:"20px",height:"20px", top:"-200px",display:'flex',position:"relative",
+                   right:"-150px"}}
+                onClick={() => {
+                    dispatch(toggleDropdown())
+                }
+                }></img>
           <p
             style={{ backgroundColor: menuValue === "0" ? " rgb(199, 255, 171)" : null, borderRadius: '5px' }}
             onClick={() => {
@@ -72,6 +74,8 @@ function App() {
 
         </div>
       )}
+       
+     
       <div className="homePart1">
         
         <div className="homeRight" >

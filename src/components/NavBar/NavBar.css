@@ -8,8 +8,9 @@
     justify-content: space-between;
     background-color: white;
     overflow: hidden;
-    align-items: center; /* Center the items vertically */
+    align-items: center; 
     justify-content: space-between;
+    padding: 0px 40px;
 }
 
 .navBarBaseContainer > img {
@@ -62,7 +63,7 @@
 @media (max-width: 768px) {
     .navBarBaseContainer {
         justify-content: space-between;
-        padding: 10px 20px;
+        padding: 10px 10px;
     }
 
     .actions {
@@ -73,6 +74,9 @@
         display: inline-block;
         cursor: pointer;
         justify-self: end;
+        width: 30px;
+        height: 30px;
+        margin-right: 5cqw;
     }
 
     
