@@ -22,7 +22,7 @@
      box-sizing: border-box;
  }
 
- .contactBodyContainer>div {
+ .contactBodyContainer>:nth-child(1) {
      width: 60%;
      height: 87dvh;
      /* border: 1px solid black; */
@@ -36,4 +36,25 @@
  .contactBodyContainer>div>iframe {
      width: 100%;
      height: 100%;
+ }
+
+ .contactBodyContainer>:nth-child(2){
+    background-color: aqua;
+    width: 40%;
+    margin: 0px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+ }
+ .contactBodyContainer>:nth-child(2)>form>div{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    gap: 5px;
+ }
+ .contactBodyContainer>:nth-child(2)>form>div>input{
+    padding:  5px 10px;
+    border: 1px solid black;
+    
  }

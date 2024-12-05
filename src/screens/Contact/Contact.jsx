@@ -15,7 +15,17 @@ const Contact = () => {
 
         </div>
         <div>
-          QWERTYUIOP
+          <h1>Contact Us</h1>
+          <form>
+            <div>
+
+              <label htmlFor="name">
+                Name
+              </label>
+              <input type="text" placeholder='Enter Your Name ' />
+            </div>
+
+          </form>
         </div>
       </div>
     </div>
