@@ -60,7 +60,7 @@
     display: none;
 }
  
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .navBarBaseContainer {
         justify-content: space-between;
         padding: 10px 10px;

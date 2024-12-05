@@ -66,9 +66,9 @@ const Products = () => {
               navigate("/feature");
               dispatch(toggleDropdown())
             }}>Features</p>
-          <p onClick={() => { }}>+91 9003139000</p>
+          
           <p onClick={() => {
-            dispatch(handleMenuMore('4'));
+            // dispatch(handleMenuMore('4'));
             navigate("/contact");
             dispatch(toggleDropdown())
           }}>Contact Us</p>
